@@ -61,3 +61,13 @@ while True:
                         scale = min(2.0, scale + 0.02) 
                 prev_distance = pinch_distance
                 is_dragging = False
+
+    elif pinch_distance > 60:
+                if prev_center is not None:
+                    dx = index_tip_pos[0] - prev_center[0]
+                    dy = index_tip_pos[1] - prev_center[1]
+                    x_offset += dx
+                    y_offset += dy
+                prev_center = index_tip_pos
+                is_dragging = True
+                prev_distance = None
