@@ -71,3 +71,7 @@ while True:
                 prev_center = index_tip_pos
                 is_dragging = True
                 prev_distance = None
+
+    scaled_w = int(image_w * scale)
+    scaled_h = int(image_h * scale)
+    resized_img = cv2.resize(image, (scaled_w, scaled_h))
