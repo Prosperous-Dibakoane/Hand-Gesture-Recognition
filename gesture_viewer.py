@@ -56,3 +56,8 @@ while True:
                 if prev_distance is not None:
                     if pinch_distance < prev_distance:
                         scale = max(0.1, scale - 0.02)
+
+                    elif pinch_distance > prev_distance:
+                        scale = min(2.0, scale + 0.02) 
+                prev_distance = pinch_distance
+                is_dragging = False
