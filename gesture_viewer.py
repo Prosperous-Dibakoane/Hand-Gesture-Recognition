@@ -85,3 +85,6 @@ while True:
     cv2.imshow("Gesture Image Viewer", frame)
     if cv2.waitKey(1) & 0xFF == 27:  # ESC to exit
         break
+
+cap.release()
+cv2.destroyAllWindows()
