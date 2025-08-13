@@ -79,3 +79,9 @@ while True:
 
     x_offset = max(0, min(x_offset, frame.shape[1] - scaled_w))
     y_offset = max(0, min(y_offset, frame.shape[0] - scaled_h))
+
+    frame[y_offset:y_offset+scaled_h, x_offset:x_offset+scaled_w] = resized_img
+
+    cv2.imshow("Gesture Image Viewer", frame)
+    if cv2.waitKey(1) & 0xFF == 27:  # ESC to exit
+        break
