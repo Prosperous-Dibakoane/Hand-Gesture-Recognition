@@ -51,3 +51,8 @@ while True:
 
             pinch_distance = math.hypot(index_tip_pos[0] - thumb_tip_pos[0],
                                         index_tip_pos[1] - thumb_tip_pos[1])
+
+            if pinch_distance < 40:
+                if prev_distance is not None:
+                    if pinch_distance < prev_distance:
+                        scale = max(0.1, scale - 0.02)
