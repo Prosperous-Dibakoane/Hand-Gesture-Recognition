@@ -9,3 +9,9 @@ START_SCALE = 0.3   # Start zoomed out (0.3 = 30% of original size)
 START_X = 0.7       # X position (0 = left, 1 = right)
 START_Y = 0.1       # Y position (0 = top, 1 = bottom)
 # ========================
+
+if not os.path.exists(IMAGE_PATH):
+    raise FileNotFoundError(f"Image not found at: {IMAGE_PATH}")
+
+image = cv2.imread(IMAGE_PATH)
+image_h, image_w = image.shape[:2]
