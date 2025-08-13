@@ -28,3 +28,11 @@ y_offset = int(START_Y * (480 - int(image_h * scale)))
 is_dragging = False
 prev_center = None
 prev_distance = None
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    frame = cv2.flip(frame, 1) 
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    results = hands.process(rgb_frame)
