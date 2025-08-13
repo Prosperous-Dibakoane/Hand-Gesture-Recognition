@@ -63,15 +63,16 @@ while True:
                 is_dragging = False
 
             elif pinch_distance > 60:
-                        if prev_center is not None:
-                            dx = index_tip_pos[0] - prev_center[0]
-                            dy = index_tip_pos[1] - prev_center[1]
-                            x_offset += dx
-                            y_offset += dy
-                        prev_center = index_tip_pos
-                        is_dragging = True
-                        prev_distance = None
+                if prev_center is not None:
+                    dx = index_tip_pos[0] - prev_center[0]
+                    dy = index_tip_pos[1] - prev_center[1]
+                    x_offset += dx
+                    y_offset += dy
+                prev_center = index_tip_pos
+                is_dragging = True
+                prev_distance = None
 
+    # Draw image
     scaled_w = int(image_w * scale)
     scaled_h = int(image_h * scale)
     resized_img = cv2.resize(image, (scaled_w, scaled_h))
