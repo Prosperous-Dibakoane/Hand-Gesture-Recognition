@@ -48,3 +48,6 @@ while True:
             h, w, _ = frame.shape
             index_tip_pos = (int(index_tip.x * w), int(index_tip.y * h))
             thumb_tip_pos = (int(thumb_tip.x * w), int(thumb_tip.y * h))
+
+            pinch_distance = math.hypot(index_tip_pos[0] - thumb_tip_pos[0],
+                                        index_tip_pos[1] - thumb_tip_pos[1])
