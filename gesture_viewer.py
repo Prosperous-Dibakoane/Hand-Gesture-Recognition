@@ -44,3 +44,7 @@ while True:
             # Get finger tips
             index_tip = hand_landmarks.landmark[8]
             thumb_tip = hand_landmarks.landmark[4]
+
+            h, w, _ = frame.shape
+            index_tip_pos = (int(index_tip.x * w), int(index_tip.y * h))
+            thumb_tip_pos = (int(thumb_tip.x * w), int(thumb_tip.y * h))
