@@ -76,3 +76,6 @@ while True:
     scaled_w = int(image_w * scale)
     scaled_h = int(image_h * scale)
     resized_img = cv2.resize(image, (scaled_w, scaled_h))
+
+    x_offset = max(0, min(x_offset, frame.shape[1] - scaled_w))
+    y_offset = max(0, min(y_offset, frame.shape[0] - scaled_h))
