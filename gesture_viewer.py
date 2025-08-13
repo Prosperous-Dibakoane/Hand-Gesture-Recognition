@@ -21,3 +21,10 @@ hands = mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.7
 mp_draw = mp.solutions.drawing_utils
 
 cap = cv2.VideoCapture(0)
+
+scale = START_SCALE
+x_offset = int(START_X * (640 - int(image_w * scale)))
+y_offset = int(START_Y * (480 - int(image_h * scale)))
+is_dragging = False
+prev_center = None
+prev_distance = None
