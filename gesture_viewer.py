@@ -40,3 +40,7 @@ while True:
     if results.multi_hand_landmarks:
         for hand_landmarks, handedness in zip(results.multi_hand_landmarks, results.multi_handedness):
             mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+            # Get finger tips
+            index_tip = hand_landmarks.landmark[8]
+            thumb_tip = hand_landmarks.landmark[4]
