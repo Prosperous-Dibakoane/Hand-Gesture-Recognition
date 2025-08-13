@@ -15,3 +15,7 @@ if not os.path.exists(IMAGE_PATH):
 
 image = cv2.imread(IMAGE_PATH)
 image_h, image_w = image.shape[:2]
+
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.7)
+mp_draw = mp.solutions.drawing_utils
