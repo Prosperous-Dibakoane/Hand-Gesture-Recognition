@@ -11,7 +11,7 @@ A **Python project** that lets you **interact with images using hand gestures** 
 
 **Demo 📸**
 
-![demo-gif](path_to_your_demo_gif_or_screenshot.gif)
+![demo-gif](hand.png)
 
 > Move your hand to drag the image. Use pinch gesture to zoom.
 
